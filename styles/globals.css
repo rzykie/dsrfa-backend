@@ -1,0 +1,414 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 15.4px; /* Increased by 10% from 14px for elderly users accessibility */
+  --background: #ffffff;
+  --foreground: oklch(0.145 0 0);
+  --card: #ffffff;
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  
+  /* Primary Green (swapped from accent) */
+  --primary: #38A169;
+  --primary-foreground: #ffffff;
+  
+  /* Secondary/Accent Red (swapped from primary) */
+  --secondary: #F7FAFC;
+  --secondary-foreground: #2D3748;
+  --accent: #E53E3E;
+  --accent-foreground: #ffffff;
+  
+  --muted: #F7FAFC;
+  --muted-foreground: #718096;
+  
+  /* Complementary colors with green as primary */
+  --success: #38A169;
+  --success-foreground: #ffffff;
+  --warning: #D69E2E;
+  --warning-foreground: #ffffff;
+  --destructive: #E53E3E;
+  --destructive-foreground: #ffffff;
+  
+  /* Earth tones from eagle */
+  --earth-brown: #8B4513;
+  --earth-light: #D2B48C;
+  
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #F7FAFC;
+  --switch-background: #CBD5E0;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #38A169;
+  
+  /* Chart colors with green as primary */
+  --chart-1: #38A169;
+  --chart-2: #E53E3E;
+  --chart-3: #8B4513;
+  --chart-4: #D69E2E;
+  --chart-5: #4299E1;
+  
+  /* Increased radius for accessibility */
+  --radius: 0.375rem; /* 6px */
+  
+  /* Height multipliers for better accessibility */
+  --input-height-multiplier: 1.15; /* 15% increase */
+  --button-height-multiplier: 1.12; /* 12% increase */
+  
+  --sidebar: #F7FAFC;
+  --sidebar-foreground: #2D3748;
+  --sidebar-primary: #38A169;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #EDF2F7;
+  --sidebar-accent-foreground: #2D3748;
+  --sidebar-border: #E2E8F0;
+  --sidebar-ring: #38A169;
+}
+
+.dark {
+  --background: #1A202C;
+  --foreground: #F7FAFC;
+  --card: #2D3748;
+  --card-foreground: #F7FAFC;
+  --popover: #2D3748;
+  --popover-foreground: #F7FAFC;
+  
+  /* Adjusted primary (green) for dark mode */
+  --primary: #68D391;
+  --primary-foreground: #1A202C;
+  
+  --secondary: #4A5568;
+  --secondary-foreground: #F7FAFC;
+  --muted: #4A5568;
+  --muted-foreground: #A0AEC0;
+  
+  /* Adjusted accent (red) for dark mode */
+  --accent: #FC8181;
+  --accent-foreground: #1A202C;
+  
+  --success: #68D391;
+  --success-foreground: #1A202C;
+  --warning: #F6E05E;
+  --warning-foreground: #1A202C;
+  --destructive: #FC8181;
+  --destructive-foreground: #1A202C;
+  
+  --border: #4A5568;
+  --input: #4A5568;
+  --ring: #68D391;
+  
+  --chart-1: #68D391;
+  --chart-2: #FC8181;
+  --chart-3: #D2B48C;
+  --chart-4: #F6E05E;
+  --chart-5: #63B3ED;
+  
+  --sidebar: #2D3748;
+  --sidebar-foreground: #F7FAFC;
+  --sidebar-primary: #68D391;
+  --sidebar-primary-foreground: #1A202C;
+  --sidebar-accent: #4A5568;
+  --sidebar-accent-foreground: #F7FAFC;
+  --sidebar-border: #4A5568;
+  --sidebar-ring: #68D391;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-earth-brown: var(--earth-brown);
+  --color-earth-light: var(--earth-light);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  
+  /* Updated radius values for better accessibility */
+  --radius-sm: calc(var(--radius) - 2px); /* 4px */
+  --radius-md: var(--radius); /* 6px */
+  --radius-lg: calc(var(--radius) + 2px); /* 8px */
+  --radius-xl: calc(var(--radius) + 6px); /* 12px */
+  
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* FORCE ALL CHECKBOXES TO BE PERFECT 20px SQUARES - NEVER RECTANGLES */
+  [role="checkbox"],
+  input[type="checkbox"],
+  button[data-slot="checkbox"],
+  [data-slot="checkbox"] {
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    min-height: 20px !important;
+    max-width: 20px !important;
+    max-height: 20px !important;
+    aspect-ratio: 1 / 1 !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Enhanced input and button heights for accessibility */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="search"],
+  input[type="date"],
+  input[type="datetime-local"],
+  input[type="month"],
+  input[type="week"],
+  input[type="time"],
+  input[type="number"],
+  textarea,
+  select {
+    min-height: calc(2.5rem * var(--input-height-multiplier)); /* ~46px from 40px */
+    padding-top: calc(0.75rem * var(--input-height-multiplier));
+    padding-bottom: calc(0.75rem * var(--input-height-multiplier));
+  }
+
+  button {
+    min-height: calc(2.5rem * var(--button-height-multiplier)); /* ~45px from 40px */
+    padding-top: calc(0.625rem * var(--button-height-multiplier));
+    padding-bottom: calc(0.625rem * var(--button-height-multiplier));
+  }
+
+  /* Special handling for small buttons */
+  button[data-size="sm"] {
+    min-height: calc(2rem * var(--button-height-multiplier)); /* ~36px from 32px */
+    padding-top: calc(0.5rem * var(--button-height-multiplier));
+    padding-bottom: calc(0.5rem * var(--button-height-multiplier));
+  }
+
+  /* Special handling for large buttons */
+  button[data-size="lg"] {
+    min-height: calc(3rem * var(--button-height-multiplier)); /* ~54px from 48px */
+    padding-top: calc(0.875rem * var(--button-height-multiplier));
+    padding-bottom: calc(0.875rem * var(--button-height-multiplier));
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+/* Custom utility classes for swapped logo colors */
+@layer utilities {
+  /* Green is now primary */
+  .text-primary-green {
+    color: #38A169;
+  }
+  
+  .bg-primary-green {
+    background-color: #38A169;
+  }
+  
+  /* Red is now secondary/accent */
+  .text-accent-red {
+    color: #E53E3E;
+  }
+  
+  .bg-accent-red {
+    background-color: #E53E3E;
+  }
+  
+  .text-earth-brown {
+    color: #8B4513;
+  }
+  
+  .bg-earth-brown {
+    background-color: #8B4513;
+  }
+  
+  .border-primary-green {
+    border-color: #38A169;
+  }
+  
+  .border-accent-red {
+    border-color: #E53E3E;
+  }
+
+  /* Backward compatibility with existing classes */
+  .text-logo-green {
+    color: #38A169;
+  }
+  
+  .bg-logo-green {
+    background-color: #38A169;
+  }
+  
+  .text-logo-red {
+    color: #E53E3E;
+  }
+  
+  .bg-logo-red {
+    background-color: #E53E3E;
+  }
+  
+  .border-logo-green {
+    border-color: #38A169;
+  }
+  
+  .border-logo-red {
+    border-color: #E53E3E;
+  }
+
+  /* Additional height utility classes */
+  .h-input-enhanced {
+    min-height: calc(2.5rem * var(--input-height-multiplier));
+  }
+
+  .h-button-enhanced {
+    min-height: calc(2.5rem * var(--button-height-multiplier));
+  }
+
+  .py-input-enhanced {
+    padding-top: calc(0.75rem * var(--input-height-multiplier));
+    padding-bottom: calc(0.75rem * var(--input-height-multiplier));
+  }
+
+  .py-button-enhanced {
+    padding-top: calc(0.625rem * var(--button-height-multiplier));
+    padding-bottom: calc(0.625rem * var(--button-height-multiplier));
+  }
+
+  /* Force all checkboxes to be perfect squares - 20px by 20px */
+  .checkbox-forced-square {
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    min-height: 20px !important;
+    max-width: 20px !important;
+    max-height: 20px !important;
+    aspect-ratio: 1 / 1 !important;
+  }
+
+  /* Horizontal line utilities */
+  .hr-line {
+    width: 100%;
+    height: 1px;
+    background-color: var(--border);
+    border: none;
+  }
+
+  .hr-line-thin {
+    height: 1px;
+  }
+
+  .hr-line-medium {
+    height: 2px;
+  }
+
+  .hr-line-thick {
+    height: 4px;
+  }
+
+  .hr-line-primary {
+    background-color: var(--primary);
+  }
+
+  .hr-line-accent {
+    background-color: var(--accent);
+  }
+
+  .hr-line-muted {
+    background-color: var(--muted-foreground);
+    opacity: 0.2;
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
